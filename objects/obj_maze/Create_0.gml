@@ -1,0 +1,1 @@
+grid = create_grid(obj_square, room_width / 2, room_height - 48, 4);
