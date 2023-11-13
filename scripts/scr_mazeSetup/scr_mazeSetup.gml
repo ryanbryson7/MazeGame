@@ -98,9 +98,9 @@ function wall_grid(gridArray, wallObj) {
 						if (space.topLeftWall == noone) {
 							var wallX = space.x - (space.sprite_width / 4);
 							var wallY = space.y - (space.sprite_height / 6);
-							var wallXScale = -1;
+							var wallSpr = spr_wallP;
 							space.topLeftWall = instance_create_layer(wallX, wallY, "Wall", wallObj, {
-								image_xscale : wallXScale
+								sprite_index : wallSpr,
 							});
 							if (space.topLeftNeighbor != noone) {
 								// neighbor hasn't made a wall yet (cause they would've made ours for us)
@@ -113,9 +113,9 @@ function wall_grid(gridArray, wallObj) {
 						if (space.topRightWall == noone) {
 							var wallX = space.x + (space.sprite_width / 4);
 							var wallY = space.y - (space.sprite_height / 6);
-							var wallXScale = 1;
+							var wallSpr = spr_wallN;
 							space.topRightWall = instance_create_layer(wallX, wallY, "Wall", wallObj, {
-								image_xscale : wallXScale
+								sprite_index : wallSpr,
 							});
 							if (space.topRightNeighbor != noone) {
 								// neighbor hasn't made a wall yet (cause they would've made ours for us)
@@ -128,9 +128,9 @@ function wall_grid(gridArray, wallObj) {
 						if (space.bottomLeftWall == noone) {
 							var wallX = space.x - (space.sprite_width / 4);
 							var wallY = space.y + (space.sprite_height / 6);
-							var wallXScale = 1;
+							var wallSpr = spr_wallN;
 							space.bottomLeftWall = instance_create_layer(wallX, wallY, "Wall", wallObj, {
-								image_xscale : wallXScale
+								sprite_index : wallSpr,
 							});
 							if (space.bottomLeftNeighbor != noone) {
 								// neighbor hasn't made a wall yet (cause they would've made ours for us)
@@ -143,9 +143,9 @@ function wall_grid(gridArray, wallObj) {
 						if (space.bottomRightWall == noone) {
 							var wallX = space.x + (space.sprite_width / 4);
 							var wallY = space.y + (space.sprite_height / 6);
-							var wallXScale = -1;
+							var wallSpr = spr_wallP;
 							space.bottomRightWall = instance_create_layer(wallX, wallY, "Wall", wallObj, {
-								image_xscale : wallXScale
+								sprite_index : wallSpr,
 							});
 							if (space.bottomRightNeighbor != noone) {
 								// neighbor hasn't made a wall yet (cause they would've made ours for us)
