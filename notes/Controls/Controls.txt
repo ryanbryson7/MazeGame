@@ -1,6 +1,3 @@
-*8/13/2023 2:00pm
+*11/15/2023 7:47pm
 Game Controls:
-- Space: Create maze (destroys "Floor" layer if maze already exists)
-- Left Click: highlight a squares neighbors (change this eventually)
-- Right Click: Destroys square (hold to paint)
-- "C": Link maze neighbors and show visualization
+- Space: Create new maze

@@ -1,9 +1,4 @@
-drawQueue = [];
-drawIndex = 0;
-drawSpeed = 2;
-
 maze = undefined;
+player = undefined;
 
-global.gridSize = 10;
-global.maze_height = (32 * global.gridSize) + 16;
-global.maze_width = 64 * global.gridSize;
+global.gridSize = 3;

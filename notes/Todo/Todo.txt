@@ -1,23 +1,15 @@
 Things to work on next!
 
-WHERE I HAVE LEFT OFF:
-- Player movement
-- Need to update collision mask for wall sprite
-  - Split up wall into two objects 
-
 Walls
 -- Fix wall sprite 
   -- Remove secondary color, go all black
   -- Make it align with the square
-	  
--- Fix square alignment?
-  -- Not sure how to handle having the line between squares
-	 Because that's how the wall sprite was created (to fit on the line between the two squares
-	 Probably need to adjust the wall sprite then
 	 
-Grid
+Grid (might not do this)
 -- Look into creating normal grid rows/columns instead of diagonal ones?
 -- Plan B: Make converting tool
 
 Camera
--- Set up camera/viewport/room_size programtically rather than in the room editor
+-- Make the camera/viewport not stretch things
+-- Add player tracking
+-- Zoom in camera

@@ -176,3 +176,25 @@ function wall_grid(gridArray, wallObj) {
 		  // Bottomright: -1
 	
 }
+	
+function createMaze(finished = false) {
+	var playerObj;
+	if (instance_exists(obj_game)) {
+		with (obj_game) {
+			if (finished) {
+				global.gridSize++;
+			}
+			if (maze != undefined) {
+				instance_destroy(maze);
+				layer_destroy_instances("Floor");
+			}
+			if (player != undefined) {
+				instance_destroy(player);
+			}
+
+			maze = instance_create_layer(mouse_x, mouse_y, "Floor", obj_maze);
+			player = instance_create_layer(maze.startSquare.x, maze.startSquare.y, "Player", obj_player);
+			playerObj = player;
+		}
+	}
+}

@@ -9,29 +9,24 @@ function mazeRecurStart(grid){
 	// Choose a random starting square
 	var startObject = getStart(grid) //TODO: modify this somehow to prevent trying squares that have been removed
 	mazeRecurNew(startObject); //TODO, MAKE NEW RECUR, just use a cell's neighbors, don't grid or indexes :)
+	addStartFinish(grid);
 }
 
 function mazeRecurNew(startObject) {
-	// Mark myself as visited
-	//addToDrawQueue(startObject);
 	with (startObject) {
 		visited = true;
 		var indexArray = [0, 1, 2, 3];
 		var neighborArray = [topLeftNeighbor, topRightNeighbor, bottomLeftNeighbor, bottomRightNeighbor];
 		var wallArray = [topLeftWall, topRightWall, bottomLeftWall, bottomRightWall];
 		indexArray = array_shuffle(indexArray);
-		// Check neighbor exists
-		// Check if neighbor has been visited
-		// Visit neighbor
+
 		for (var i = 0; i < 4; ++i) {
 			if (neighborArray[indexArray[i]] != noone && instance_exists(neighborArray[indexArray[i]]) && !neighborArray[indexArray[i]].visited) {
-				//addToDrawQueue(wallArray[indexArray[i]]);
 				instance_destroy(wallArray[indexArray[i]]);
 				mazeRecurNew(neighborArray[indexArray[i]]);
 			}
 		}
 	}
-	//addToDrawQueue(startObject);
 }
 
 function mazeRecur(grid, row, column, maxRows, maxColumns, delay) {
@@ -43,11 +38,6 @@ function mazeRecur(grid, row, column, maxRows, maxColumns, delay) {
 	// Skip if already visited
 	if (array_get(grid[row], column).visited) {
 		return;
-	}
-	
-	with (array_get(grid[row], column)) {
-		delay += 60;
-		alarm[0] = delay;
 	}
 	
 	// Set square to visited
@@ -88,7 +78,7 @@ function mazeRecur(grid, row, column, maxRows, maxColumns, delay) {
 		}
 	}
 	with (array_get(grid[row], column)) {
-		alarm[1] = alarm[0] + 60;
+		alarm[0] = alarm[0] + 60;
 	}
 }
 
@@ -153,8 +143,32 @@ function getStart(grid) {
 	else { return startObject; }
 }
 	
-function addToDrawQueue(object) {
-	with (obj_game) {
-		array_push(drawQueue, object);
+function addStartFinish(grid) {
+	startSquare = getRandomEdgeSquare(grid);
+	endSquare = getRandomEdgeSquare(grid);
+	// One day this shouldn't be how this is done, but it's good enough today
+	while (startSquare == endSquare) {
+		endSquare = getRandomEdgeSquare(grid);
 	}
+	
+	startSquare.image_index++;
+	
+	endSquare.image_index--;
+	endSquare.isFinish = true;
+}
+
+function getRandomEdgeSquare(grid) { 
+	var row = irandom_range(0, array_length(grid) - 1);
+	var rowLength = array_length(array_get(grid, row))
+	var column;
+	var isLeft = irandom_range(0, 1);
+	
+	if (isLeft == 0) {
+		column = 0;
+	}
+	else if (isLeft == 1) {
+		column = rowLength - 1;
+	}
+	
+	return array_get(array_get(grid, row), column);
 }

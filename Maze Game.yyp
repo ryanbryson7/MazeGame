@@ -48,6 +48,7 @@
     {"id":{"name":"obj_square","path":"objects/obj_square/obj_square.yy",},},
     {"id":{"name":"obj_game","path":"objects/obj_game/obj_game.yy",},},
     {"id":{"name":"scr_mazeSetup","path":"scripts/scr_mazeSetup/scr_mazeSetup.yy",},},
+    {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],

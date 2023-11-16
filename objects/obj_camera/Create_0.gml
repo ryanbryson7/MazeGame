@@ -1,0 +1,1 @@
+camera_set_view_border(view_camera[0], 400, 400);

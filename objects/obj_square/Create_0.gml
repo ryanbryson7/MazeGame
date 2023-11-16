@@ -1,5 +1,6 @@
 visited = false;
 image_speed = 0;
+isFinish = false;
 
 topRightNeighbor = noone;
 topLeftNeighbor = noone;
