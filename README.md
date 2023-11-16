@@ -1,11 +1,13 @@
 # MazeGame
 A simple maze game
 
+# Gameplay
+To start the game, press Space.
+The first maze starts with a size of 3, and increases by 1 after finishing a maze. FInish a maze by navigating the player from the blue square to the red square:
+![image](https://github.com/ryanbryson7/MazeGame/assets/70662474/19cb59a5-69c8-466f-8b37-0659b87650f0)
+
 # Controls:
 Create Maze - Space Bar\
-![image](https://github.com/ryanbryson7/MazeGame/assets/70662474/4a78e044-5919-4982-9808-32100c3b495d)
-
-Solve Maze - C\
 ![image](https://github.com/ryanbryson7/MazeGame/assets/70662474/eb10c642-bdf0-4e1a-85ce-4c21af313f76)
 
 Place Character - Left Click\
